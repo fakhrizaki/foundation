@@ -50,12 +50,12 @@ $active-region-selector: ".active" !default;
       visibility: hidden;
     }
   }
-  
+
   @if $section-type != tabs {
   	&[data-section-small-style] {
       width: 100% !important; // override inline style
 
-	  & > [data-section-region], & > section, & > .section { 
+	  & > [data-section-region], & > section, & > .section {
         padding: 0 !important; // override inline style
         margin: 0 !important; // override inline style
         & > [data-section-title], & > #{$title-selector}{
@@ -113,7 +113,7 @@ $active-region-selector: ".active" !default;
   }
 
   &#{$active-region-selector} {
-    & > [data-section-content], & > #{$content-selector} { display: block; }    
+    & > [data-section-content], & > #{$content-selector} { display: block; }
   }
 
   &:not(#{$active-region-selector}) {
@@ -151,14 +151,14 @@ $active-region-selector: ".active" !default;
 	  padding-#{$default-float}: $section-vertical-tabs-title-width;
 
       & > [data-section-title], & > #{$title-selector} {
-        width: $section-vertical-tabs-title-width;     
+        width: $section-vertical-tabs-title-width;
       }
     }
   }
 
   // Styles for when Vertical Nav
   @else if $section-type == vertical-nav {
-	
+
 	position: relative;
     display: inline-block;
 
@@ -200,7 +200,7 @@ $active-region-selector: ".active" !default;
   }
 }
 
-//foundation styles for section regions
+// Styles for section regions
 @mixin section-style($section-type:accordion, $title-selector: $title-selector, $content-selector: $content-selector, $title-padding:$section-title-padding, $title-color:$section-title-color, $title-font-size:$section-font-size, $title-bg:$section-title-bg, $title-bg-hover:$section-title-bg-hover, $title-bg-active:$section-title-bg-active, $title-color-active:$section-title-color-active, $content-bg:$section-content-bg, $content-padding:$section-content-padding, $section-border-size:$section-border-size, $section-border-style:$section-border-style, $section-border-color: $section-border-color) {
 
   // Default Styles
@@ -228,7 +228,7 @@ $active-region-selector: ".active" !default;
   }
 
   &#{$active-region-selector} {
-	& > #{$title-selector} { 
+	& > #{$title-selector} {
 	  background: $title-bg-active;
       a { color: $title-color-active; }
     }
@@ -258,7 +258,7 @@ $active-region-selector: ".active" !default;
 	  padding-#{$default-float}: $section-vertical-tabs-title-width - emCalc(1px);
 
       & > #{$title-selector} {
-        background-color: $title-bg-active;  
+        background-color: $title-bg-active;
       }
     }
   }
@@ -295,7 +295,7 @@ $active-region-selector: ".active" !default;
   .section-container.horizontal-nav,
   .section-container.accordion {
 	@include section-container-style(accordion);
-	& > section, & > .section { 
+	& > section, & > .section {
       @include section-style(accordion);
     }
   }
@@ -309,7 +309,7 @@ $active-region-selector: ".active" !default;
 
   .section-container.tabs {
 	@include section-container-style(tabs);
-	& > section, & > .section { 
+	& > section, & > .section {
       @include section-style(tabs, $title-bg-active: $section-title-bg-active-tabs);
     }
   }
@@ -325,7 +325,7 @@ $active-region-selector: ".active" !default;
 
 	.section-container.auto {
 	  @include section-container-style(tabs);
-	  & > section, & > .section { 
+	  & > section, & > .section {
         @include section-style(tabs, $title-bg-active: $section-title-bg-active-tabs);
       }
     }
@@ -339,7 +339,7 @@ $active-region-selector: ".active" !default;
 
 	.section-container.vertical-tabs {
 	  @include section-container-style(vertical-tabs);
-	  & > section, & > .section { 
+	  & > section, & > .section {
         @include section-style(vertical-tabs);
       }
     }
@@ -353,7 +353,7 @@ $active-region-selector: ".active" !default;
 
 	.section-container.vertical-nav {
 	  @include section-container-style(vertical-nav);
-	  & > section, & > .section { 
+	  & > section, & > .section {
         @include section-style(vertical-nav);
       }
     }
@@ -367,7 +367,7 @@ $active-region-selector: ".active" !default;
 
 	.section-container.horizontal-nav {
 	  @include section-container-style(horizontal-nav);
-	  & > section, & > .section { 
+	  & > section, & > .section {
         @include section-style(horizontal-nav);
       }
     }
@@ -383,7 +383,7 @@ $active-region-selector: ".active" !default;
     }
 	.section-container {
       @include section-container-style(accordion);
-	  & > section, & > .section { 
+	  & > section, & > .section {
         @include section-style(accordion);
       }
     }
